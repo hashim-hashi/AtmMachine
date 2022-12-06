@@ -72,14 +72,14 @@ public class cardHolder
         }
         void deposit(cardHolder currentUser)
         {
-            Console.WriteLine("How much money deposit?");
+            Console.WriteLine("How much money do you want to deposit?");
             double deposit = Double.Parse(Console.ReadLine());
             currentUser.setBalance(currentUser.getBalance() + deposit);
-            Console.WriteLine("Thank you for deposit. you balance is" + currentUser.getBalance());
+            Console.WriteLine("Thank you for the deposit. you balance is" + currentUser.getBalance());
         }
         void withdraw(cardHolder currentUser)
         {
-            Console.WriteLine("How much money withdrawing?");
+            Console.WriteLine("How much money do you want to withdraw?");
             double withdrawal = Double.Parse(Console.ReadLine());
             // check withdraw amount is greater than balance
             if (currentUser.getBalance() < withdrawal)
@@ -89,7 +89,7 @@ public class cardHolder
             else
             {
                 currentUser.setBalance(currentUser.getBalance() - withdrawal);
-                Console.WriteLine("Thank you");
+                Console.WriteLine("Thank you..");
             }
 
         }
@@ -98,14 +98,20 @@ public class cardHolder
             Console.WriteLine("Current Balance:" + currentUser.getBalance());
         }
         List<cardHolder> cardHolders = new List<cardHolder>();
-        cardHolders.Add(new cardHolder("2313141", 6612, "fad", "sgw", 1234));
-        cardHolders.Add(new cardHolder("2313124", 1612, "yyad", "sgwew", 1323));
-        cardHolders.Add(new cardHolder("2313143", 1312, "fadd", "sgwfsd", 1223));
-        cardHolders.Add(new cardHolder("2313123", 1412, "fadew", "gsfsgw", 1523));
+        cardHolders.Add(new cardHolder("2313141234", 6612, "Mohammed", "Hashim", 19234));
+        cardHolders.Add(new cardHolder("2313124216", 1612, "Muhammed", "Irfan", 12323));
+        cardHolders.Add(new cardHolder("2313143345", 1312, "Mohammed", "Hisham", 251223));
+        cardHolders.Add(new cardHolder("2313123435", 1422, "Vishnu", "c g", 51523));
+        cardHolders.Add(new cardHolder("2313141543", 2582, "Adarsh", "", 91234));
+        cardHolders.Add(new cardHolder("2313141351", 9432, "Jaseem", "m", 1344234));
+        cardHolders.Add(new cardHolder("2313141213", 5622, "Munavir", "angillath", 123413));
+        cardHolders.Add(new cardHolder("2313141222", 5242, "George", "", 109234));
+        cardHolders.Add(new cardHolder("2313141232", 4162, "Mathew", "George", 12134));
+        cardHolders.Add(new cardHolder("2313141223", 6421, "fadil", "salih", 31434));
 
         //prompt user
-        Console.WriteLine("Welcome to ATM");
-        Console.WriteLine("please insert card");
+        Console.WriteLine("Welcome to ATM Machine...");
+        Console.WriteLine("please insert your card");
         String debitCardNum = "";
         cardHolder currentUser;
 
@@ -121,7 +127,7 @@ public class cardHolder
                 }
                 else
                 {
-                    Console.WriteLine("Not working");
+                    Console.WriteLine("Insert your card and Try Again...");
                 }
             }
             catch
@@ -130,7 +136,7 @@ public class cardHolder
             }
         }
 
-        Console.WriteLine("Please enetr pin");
+        Console.WriteLine("Please enter your pin:");
         int userPin = 0;
 
         while (true)
@@ -152,7 +158,7 @@ public class cardHolder
                 Console.WriteLine("Not working");
             }
         }
-        Console.WriteLine("Welcome " + currentUser.getFirstName());
+        Console.WriteLine("Welcome " + currentUser.getFirstName()+" "+ currentUser.getLastName());
         int option = 0;
         printOptions();
         do
